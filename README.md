@@ -19,20 +19,20 @@ Instead of generating targets from inputs, we fix the target vector and **optimi
 
 Given:
 
-- A frozen nonlinear neural network \( f_\theta \)
-- A fixed target vector \( y \)
+- A frozen nonlinear neural network $f_\theta$
+- A fixed target vector $y$
 
-We optimize the feature matrix \( X \) to minimize:
+We optimize the feature matrix $X$ to minimize:
 
-\[
+$$
 \mathcal{L} = \text{MSE}(f_\theta(X), y) - \lambda \cdot \text{MSE}(X\beta, y)
-\]
+$$
 
 where:
 
 - The first term enforces learnability by the nonlinear model.
 - The second term penalizes linear regression.
-- \( \lambda \) controls task difficulty.
+- $\lambda$ controls task difficulty.
 
 ---
 
@@ -89,8 +89,8 @@ python generate.py \
 
 After generation:
 
-- Linear Regression → low \( R^2 \)
-- KNN / nonlinear models → high \( R^2 \)
+- Linear Regression → low $R^2$
+- KNN / nonlinear models → high $R^2$
 
 This confirms that the dataset contains nonlinear structure and that the baseline penalization is effective.
 
@@ -103,7 +103,7 @@ The underlying nonlinear process is a randomly initialized neural network:
 - 2-layer encoder (ReLU)
 - 3-layer decoder
 - Model parameters frozen (learning rate = 0)
-- Only the feature matrix \( X \) is optimized
+- Only the feature matrix $X$ is optimized
 
 ---
 
